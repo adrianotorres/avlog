@@ -1,0 +1,9 @@
+<table class="table">
+  <tbody>
+    <% @produtos.each do |produto| %>
+      <div class="col-md-4">
+        <%= image_submit_tag(produto.imagem) %>
+      </div>
+    <% end %>
+  </tbody>
+</table>
