@@ -1,0 +1,26 @@
+{
+  "name": "avlog",
+  "homepage": "https://github.com/adrianotorres/avlog",
+  "authors": [
+    "Adriano Torres <adriano.skilo@gmail.com>"
+  ],
+  "description": "Sistema de Logística",
+  "main": "",
+  "keywords": [
+    "logistica",
+    "rails",
+    "sistema"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
