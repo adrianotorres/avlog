@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @setor.nome %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @setor.sigla %>
+</p>
+
+<%= link_to edit_setor_path(@setor), class: "btn btn-info" do %> <i class="fa fa-pencil-square-o"></i> Editar <%end%>
+<%= link_to setores_path, class: "btn btn-primary" do %> <i class="fa fa-reply"></i> Voltar <%end%>

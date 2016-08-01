@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :setores
   get 'solicitar_produto' => 'solicitar_produto#index'
 
   resources :produtos
