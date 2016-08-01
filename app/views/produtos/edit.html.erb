@@ -1,6 +1,14 @@
-<h1>Editing Produto</h1>
+<h1>Alterando o Produto</h1>
 
 <%= render 'form', produto: @produto %>
 
 <%= link_to 'Show', @produto %> |
 <%= link_to 'Back', produtos_path %>
+
+
+
+
+
+
+
+<%= link_to @produto, class: "btn btn-default" do %> <i class="fa fa-eye"></i> <%end%></td>
