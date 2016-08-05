@@ -4,7 +4,7 @@ class SetoresController < ApplicationController
   # GET /setores
   # GET /setores.json
   def index
-    @setores = Setor.all
+    @setores = Setor.order(principal: :desc)
   end
 
   # GET /setores/1
@@ -54,14 +54,21 @@ class SetoresController < ApplicationController
   # DELETE /setores/1
   # DELETE /setores/1.json
   def destroy
-    @setor.destroy
+    if Setor.all.count > 1
+      @setor.destroy
+      retorno = 'Setor was successfully destroyed.'
+    else
+      retorno = 'Deve sempre existir pelo menos um Setor.'
+    end
+
     respond_to do |format|
-      format.html { redirect_to setores_url, notice: 'Setor was successfully destroyed.' }
+      format.html { redirect_to setores_url, notice: retorno  }
       format.json { head :no_content }
     end
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_setor
       @setor = Setor.find(params[:id])

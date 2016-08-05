@@ -30,7 +30,7 @@ Requisitos
 
 
 *** Cadastrar empresa, filiais (como organização do lten)
-*** adicionar flag principa l no setor, esse será o setor para onde os produtos cadastrados irão no estoque
+-ok-*** adicionar flag principa l no setor, esse será o setor para onde os produtos cadastrados irão no estoque
 aquisição (entrada do produto)
 fornecimento (saída do produto)
 

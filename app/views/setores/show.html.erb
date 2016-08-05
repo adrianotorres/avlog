@@ -10,5 +10,14 @@
   <%= @setor.sigla %>
 </p>
 
+<p>
+  <strong>Principal:</strong>
+  <% if @setor.principal %>
+    <i class="fa fa-check"></i>
+  <% else %>
+    <i class="fa fa-remove"></i>
+  <% end %>
+</p>
+
 <%= link_to edit_setor_path(@setor), class: "btn btn-info" do %> <i class="fa fa-pencil-square-o"></i> Editar <%end%>
 <%= link_to setores_path, class: "btn btn-primary" do %> <i class="fa fa-reply"></i> Voltar <%end%>
