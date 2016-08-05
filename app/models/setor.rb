@@ -6,12 +6,7 @@ class Setor < ApplicationRecord
 
   # validate :deve_ter_um_principal
 
-  def tem_mais_de_um?
-    tem_mais_de_um = Setor.all.count > 1
-    unless tem_mais_de_um
-      errors.add :base,  "Deve sempre existir pelo menos um Setor."
-    end
-  end
+
 
 
   def nome=(nome)
