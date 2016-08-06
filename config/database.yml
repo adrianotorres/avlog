@@ -3,8 +3,8 @@ development:
   encoding: utf8
   database: avlog_development
   host: localhost
-  username: postgres
-  password: postgres
+  username: joseadriano
+  password:
   pool: 5
   port: 5432
 
@@ -13,8 +13,8 @@ test:
   encoding: utf8
   database: avlog_test
   host: localhost
-  username: postgres
-  password: postgres
+  username: joseadriano
+  password:
   pool: 5
   port: 5432
 
