@@ -1,42 +1,10 @@
-<%= form_for(produto) do |f| %>
-  <% if produto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
-
-      <ul>
-      <% produto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= bootstrap_form_for(produto, inline_errors: false) do |f| %>
+  <%= f.text_field :nome %>
+  <%= f.text_field :valor_compra, prepend: "R$:", label: "Valor de compra" %>
+  <%= f.text_area :descricao, label: "Descrição" %>
+  <%= f.text_field :imagem, help: "Para ter uma melhor resolução, utilize imagens de até 100px quadrado, no formato .jpg" %>
+  <%= button_tag( :class => "btn btn-info") do %>
+    <i class="fa fa-download"></i> Salvar
   <% end %>
-
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
-  </div>
-
-  <div class="field">
-    <%= f.label :valor_compra %>
-    <%= f.text_field :valor_compra %>
-  </div>
-
-  <div class="field">
-    <%= f.label :quantidade %>
-    <%= f.number_field :quantidade %>
-  </div>
-
-  <div class="field">
-    <%= f.label :descricao %>
-    <%= f.text_area :descricao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :imagem %>
-    <%= f.text_field :imagem %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Salvar', class: "btn btn-info" %>
-  </div>
+  <%= link_to produtos_path, class: "btn btn-primary" do %> <i class="fa fa-reply"></i> Voltar <%end%>
 <% end %>

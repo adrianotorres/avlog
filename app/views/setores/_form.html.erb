@@ -1,32 +1,8 @@
-<%= form_for(setor) do |f| %>
-  <% if setor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(setor.errors.count, "error") %> prohibited this setor from being saved:</h2>
-
-      <ul>
-      <% setor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= bootstrap_form_for(setor, inline_errors: false) do |f| %>
+  <%= f.text_field :nome %>
+  <%= f.text_field :sigla %>
+  <%= button_tag( :class => "btn btn-info") do %>
+    <i class="fa fa-download"></i> Salvar
   <% end %>
-
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome, required: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sigla %>
-    <%= f.text_field :sigla, required: true %>
-  </div>
-
-  <div class="actions">
-    <!-- <%= f.submit 'Salvar',class: "" do  %> <i class="fa fa-download"></i> Salvar <%end%> -->
-
-
-    <%= button_tag( :class => "btn btn-info") do %>
-      <i class="fa fa-download"></i> Salvar
-    <% end %>
-  </div>
+  <%= link_to setores_path, class: "btn btn-primary" do %> <i class="fa fa-reply"></i> Voltar <%end%>
 <% end %>

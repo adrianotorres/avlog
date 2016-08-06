@@ -4,7 +4,7 @@ class SetoresController < ApplicationController
   # GET /setores
   # GET /setores.json
   def index
-    @setores = Setor.order(principal: :desc)
+    @setores = Setor.order(principal: :asc)
   end
 
   # GET /setores/1

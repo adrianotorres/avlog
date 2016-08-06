@@ -14,5 +14,6 @@
  *= require_self
  *= require bootstrap/dist/css/bootstrap.min.css
  *= require bootstrap/dist/css/bootstrap-theme.min.css
+ *= require rails_bootstrap_forms
  *= require font-awesome
  */

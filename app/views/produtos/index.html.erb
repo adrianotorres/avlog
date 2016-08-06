@@ -10,7 +10,6 @@
       <th>Quantidade</th>
       <th>Descrição</th>
       <th>Imagem</th>
-      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,7 +21,6 @@
         <td>R$ <%= produto.valor_compra %></td>
         <td><%= produto.quantidade %></td>
         <td><%= produto.descricao %></td>
-        <td><%= produto.imagem %></td>
         <td><%= image_submit_tag(produto.imagem) %></td>
         <td><%= link_to produto, class: "btn btn-default" do %> <i class="fa fa-eye"></i> <%end%></td>
         <td><%= link_to edit_produto_path(produto), class: "btn btn-primary" do %> <i class="fa fa-pencil-square-o"></i> <%end%></td>
