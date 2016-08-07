@@ -3,13 +3,11 @@
 one:
   nome: MyString
   valor_compra: 1.5
-  quantidade: 1
   descricao: MyText
   imagem: MyString
 
 two:
   nome: MyString
   valor_compra: 1.5
-  quantidade: 1
   descricao: MyText
   imagem: MyString
