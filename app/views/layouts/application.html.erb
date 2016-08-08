@@ -9,6 +9,9 @@
   </head>
 
   <body>
+
+
+
     <div class="row">
       <nav class="navbar navbar-inverse">
        <div class="container-fluid">
@@ -37,13 +40,24 @@
              <li><a href="#">Administração</a></li>
            </ul>
            <ul class="nav navbar-nav navbar-right">
-             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuário: José Adriano</a></li>
-             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sair</a></li>
+             <% if usuario_signed_in? %>
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuário: <%= current_usuario.email %></a></li>
+              <%= link_to destroy_usuario_session_path, method: :delete do %> <i class="fa fa-sign-out"></i> Sair <%end%>
+             <% end %>
            </ul>
          </div>
        </div>
       </nav>
     </div>
+
+    <% if notice || alert %>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
+    <% end %>
 
     <div class="row">
       <div class="col-md-2"></div>

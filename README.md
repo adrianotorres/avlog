@@ -30,9 +30,21 @@ Requisitos
 
 
 *** Cadastrar empresa, filiais (como organização do lten)
--ok-*** adicionar flag principa l no setor, esse será o setor para onde os produtos cadastrados irão no estoque
+
+usuario
+  * Customizar as view (intenacionalizar)
+  * Adicionar setor no cadastro de usuário.
+  * Adicionar admin (boolean)
+  * Só admin podem cadastrar usuários
+
+
 aquisição (entrada do produto)
-fornecimento (saída do produto)
+  * Será sempre para o setor principal
+  * Validar se o usuário pertence ao setor principal, caso contrário, lançar um erro
+
+fornecimento(solicitação do produto) (saída do produto)
+  * verificar se serão em dois passos, 1-Solicitação, 2-Fornecimento
+  * tela de solicitação de produtos
 
 
 
