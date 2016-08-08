@@ -11,5 +11,5 @@ class Setor < ApplicationRecord
   end
 
 
-  scope :principal, -> { where principal: true }
+  scope :principal, -> { where(principal: true).first }
 end
