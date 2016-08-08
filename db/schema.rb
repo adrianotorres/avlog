@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160807162742) do
+ActiveRecord::Schema.define(version: 20160807164727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "estoques", force: :cascade do |t|
+    t.integer  "produto_id"
+    t.integer  "setor_id"
+    t.integer  "quantidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["produto_id"], name: "index_estoques_on_produto_id", using: :btree
+    t.index ["setor_id"], name: "index_estoques_on_setor_id", using: :btree
+  end
 
   create_table "produtos", force: :cascade do |t|
     t.string   "nome"
@@ -32,4 +42,6 @@ ActiveRecord::Schema.define(version: 20160807162742) do
     t.boolean  "principal"
   end
 
+  add_foreign_key "estoques", "produtos"
+  add_foreign_key "estoques", "setores"
 end

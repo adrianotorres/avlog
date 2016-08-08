@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aquisição</h1>
+
+<%= bootstrap_form_for(@estoque, :url => url_for(:controller => 'estoques', :action => 'adquirir')) do |f| %>
+  <% produtos = @produtos.map { |p| [ p.nome, p.id ] } %>
+  <% setores = @setores.map { |s| [ s.nome, s.id ] } %>
+  <%= f.select :produto, produtos, { label: "Produto" }, { class: "selectpicker" } %>
+  <%= f.select :setor, setores, { label: "Setor" }, { class: "selectpicker" } %>
+  <%= f.number_field :quantidade %>
+  <%= button_tag( :class => "btn btn-info") do %>
+    <i class="fa fa-download"></i> Salvar
+  <% end %>
+<% end %>
