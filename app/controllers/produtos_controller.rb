@@ -26,8 +26,11 @@ class ProdutosController < ApplicationController
   def create
     @produto = Produto.new(produto_params)
 
+    salvo = @produto.save
+    salvo = Estoque.create(produto: @produto, setor: Setor.principal, quantidade: 0) if salvo
+    
     respond_to do |format|
-      if @produto.save
+      if salvo
         format.html { redirect_to @produto, notice: 'Produto salvo com sucesso.' }
         format.json { render :show, status: :created, location: @produto }
       else

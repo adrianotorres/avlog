@@ -4,7 +4,7 @@ class SetoresController < ApplicationController
   # GET /setores
   # GET /setores.json
   def index
-    @setores = Setor.order(principal: :asc)
+    @setores = Setor.order(principal: :desc)
   end
 
   # GET /setores/1
@@ -25,10 +25,11 @@ class SetoresController < ApplicationController
   # POST /setores.json
   def create
     @setor = Setor.new(setor_params)
+    @setor.principal = false
 
     respond_to do |format|
       if @setor.save
-        format.html { redirect_to @setor, notice: 'Setor was successfully created.' }
+        format.html { redirect_to @setor, notice: 'Setor foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @setor }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class SetoresController < ApplicationController
   def update
     respond_to do |format|
       if @setor.update(setor_params)
-        format.html { redirect_to @setor, notice: 'Setor was successfully updated.' }
+        format.html { redirect_to @setor, notice: 'Setor alterado com sucesso.' }
         format.json { render :show, status: :ok, location: @setor }
       else
         format.html { render :edit }
@@ -54,11 +55,11 @@ class SetoresController < ApplicationController
   # DELETE /setores/1
   # DELETE /setores/1.json
   def destroy
-    if Setor.all.count > 1
+    unless @setor.principal
       @setor.destroy
-      retorno = 'Setor was successfully destroyed.'
+      retorno = 'Setor foi excluído com sucesso.'
     else
-      retorno = 'Deve sempre existir pelo menos um Setor.'
+      retorno = 'Não é permitido excluir o setor principal.'
     end
 
     respond_to do |format|
