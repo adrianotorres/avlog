@@ -2,10 +2,26 @@
 <html>
   <head>
     <title>Avlog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
+    </style>
   </head>
 
   <body>
@@ -36,7 +52,7 @@
             </li>
 
              <li><a href="#">Aquisição</a></li>
-             <li><a href="#">Solicitação</a></li>
+             <li><%= link_to 'Solicitação', new_solicitacao_path %></li>
              <li><a href="#">Relatórios</a></li>
              <li><a href="#">Administração</a></li>
            </ul>
@@ -64,7 +80,11 @@
       <div class="col-md-2"></div>
       <div class="col-md-8"><%= yield %></div>
       <div class="col-md-2"></div>
-    </div>
+    </div><br><br>
+
+    <footer class="container-fluid text-center">
+      <p>Todos os direitos reservador à AVTech - 2016</p>
+    </footer>
 
   </body>
 </html>

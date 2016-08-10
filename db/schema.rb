@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160810012323) do
     t.integer  "produto_id"
     t.integer  "quantidade_solicitada"
     t.integer  "quantidade_fornecida"
+    t.datetime "data_fornecimento"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.index ["produto_id"], name: "index_solicitacoes_on_produto_id", using: :btree

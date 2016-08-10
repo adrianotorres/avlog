@@ -1,27 +1,22 @@
 Rails.application.routes.draw do
+
+  # root "setores#index"
+
+  resources :estoques
+  resources :produtos
+  resources :solicitacoes
+  resources :setores
+
   # devise_for :usuarios
   devise_for :usuarios, controllers: {
     sessions: 'usuarios/sessions'
   }
 
-
-
-  # resources :estoques
-  resources :produtos do
-    collection do
-      get :solicitacao, on: :new
-    end
-    member do
-      post :solicitacao
-    end
+  devise_scope :usuario do
+    root to: "usuarios/sessions#new"
   end
 
-  resources :setores
-
-  get 'aquisicao' => 'estoques#aquisicao'
-  post 'adquirir' => 'estoques#adquirir'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  root "setores#index"
 end
+
+
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

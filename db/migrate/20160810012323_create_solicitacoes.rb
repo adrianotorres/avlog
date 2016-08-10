@@ -5,6 +5,7 @@ class CreateSolicitacoes < ActiveRecord::Migration[5.0]
       t.references :produto, foreign_key: true
       t.integer :quantidade_solicitada
       t.integer :quantidade_fornecida
+      t.timestamp :data_fornecimento
 
       t.timestamps
     end

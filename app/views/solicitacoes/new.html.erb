@@ -1,5 +1,32 @@
-<h1>New Solicitacao</h1>
-
-<%= render 'form', solicitacao: @solicitacao %>
-
-<%= link_to 'Back', solicitacoes_path %>
+<div class="container-fluid bg-3 text-center">
+  <h3>Soliciação de Produtos</h3><br>
+  <div class="row">
+    <% for produto in @produtos%>
+      <%= form_tag("/solicitacao") do %>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-12">
+                    <fieldset>
+                      <legend><strong><%=produto.nome%></strong></legend>
+										  <%= image_tag produto.imagem %>
+                    <fieldset>
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-12 text-right">
+                    <%= label_tag :quantidade %>
+                    <%= number_field_tag :quantidade, nil, min: 1%>
+										<%= submit_tag 'Solicitar'%>
+									</div>
+								</div>
+							</div>
+						</div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
