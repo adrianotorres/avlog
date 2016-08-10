@@ -7,7 +7,15 @@ Rails.application.routes.draw do
 
 
   # resources :estoques
-  resources :produtos
+  resources :produtos do
+    collection do
+      get :solicitacao, on: :new
+    end
+    member do
+      post :solicitacao
+    end
+  end
+
   resources :setores
 
   get 'aquisicao' => 'estoques#aquisicao'

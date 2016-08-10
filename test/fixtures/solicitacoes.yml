@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: one
+  produto: one
+  quantidade_solicitada: 1
+  quantidade_fornecida: 1
+
+two:
+  usuario: two
+  produto: two
+  quantidade_solicitada: 1
+  quantidade_fornecida: 1
