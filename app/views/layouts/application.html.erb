@@ -51,7 +51,7 @@
               </ul>
             </li>
 
-             <li><a href="#">Aquisição</a></li>
+             <% if usuario_do_setor_principal %><li><a href="#">Aquisição</a></li><% end %>
              <li><%= link_to 'Solicitação', new_solicitacao_path %></li>
              <li><a href="#">Relatórios</a></li>
              <li><a href="#">Administração</a></li>
