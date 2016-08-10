@@ -3,10 +3,9 @@ class Usuarios::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-    @aqui = 'testamdp'
+  # def new
     # super
-  end
+  # end
 
   # POST /resource
   # def create
