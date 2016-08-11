@@ -1,32 +1,10 @@
-<%= form_for(estoque) do |f| %>
-  <% if estoque.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(estoque.errors.count, "error") %> prohibited this estoque from being saved:</h2>
-
-      <ul>
-      <% estoque.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= bootstrap_form_for(estoque, inline_errors: false) do |f| %>
+  <% produtos = @produtos.map { |p| [ p.nome, p.id ] } %>
+  <% produtos.unshift [ 'Selecione o produto', 0 ] %>
+  <%= f.select :produto_id, produtos, { label: "Produto" }, { class: "selectpicker" } %>
+  <%= f.number_field :quantidade, min: 1 %>
+  <%= button_tag( :class => "btn btn-info") do %>
+    <i class="fa fa-download"></i> Salvar
   <% end %>
-
-  <div class="field">
-    <%= f.label :produto_id %>
-    <%= f.text_field :produto_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :setor_id %>
-    <%= f.text_field :setor_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :quantidade %>
-    <%= f.number_field :quantidade, min: 1 %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= link_to estoques_path, class: "btn btn-primary" do %> <i class="fa fa-reply"></i> Voltar <%end%>
 <% end %>
