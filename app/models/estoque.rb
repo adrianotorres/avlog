@@ -4,4 +4,5 @@ class Estoque < ApplicationRecord
 
   validates :setor, :produto, :quantidade,  presence: true
   validates :setor, uniqueness: { scope: :produto }
+  validates :quantidade, :numericality => { greater_than: 0 }
 end

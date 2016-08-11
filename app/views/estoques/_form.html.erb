@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :quantidade %>
-    <%= f.number_field :quantidade %>
+    <%= f.number_field :quantidade, min: 1 %>
   </div>
 
   <div class="actions">
