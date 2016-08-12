@@ -8,7 +8,7 @@
       <th>Produto</th>
       <th>Setor</th>
       <th>Quantidade</th>
-      <th colspan="2"></th>
+      <!-- <th colspan="2"></th> -->
     </tr>
   </thead>
 
@@ -18,8 +18,8 @@
         <td><%= estoque.produto.nome %></td>
         <td><%= estoque.setor.nome %></td>
         <td><%= estoque.quantidade %></td>
-        <td><%= link_to edit_estoque_path(estoque), class: "btn btn-primary" do %> <i class="fa fa-pencil-square-o"></i> <%end%></td>
-        <td><%= link_to estoque, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class: "btn btn-danger" do %> <i class="glyphicon glyphicon-remove-circle"></i> <%end%></td>
+        <!-- <td><%= link_to edit_estoque_path(estoque), class: "btn btn-primary" do %> <i class="fa fa-pencil-square-o"></i> <%end%></td>
+        <td><%= link_to estoque, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class: "btn btn-danger" do %> <i class="glyphicon glyphicon-remove-circle"></i> <%end%></td> -->
       </tr>
     <% end %>
   </tbody>
