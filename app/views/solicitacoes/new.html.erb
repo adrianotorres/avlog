@@ -1,6 +1,23 @@
 <div class="container-fluid bg-3 text-center">
   <h3>Soliciação de Produtos</h3><br>
+
   <div class="row">
+    <table class="table">
+      <thead>
+        <th>Produto</th>
+        <% for setor in @setores%>
+          <th><%= setor.sigla%></th>
+        <% end %>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <!-- <div class="row">
     <% for produto in @produtos%>
       <%= form_tag("/solicitacao") do %>
         <div class="col-md-4">
@@ -28,5 +45,5 @@
         </div>
       <% end %>
     <% end %>
-  </div>
+  </div> -->
 </div>

@@ -16,6 +16,7 @@ class SolicitacoesController < ApplicationController
   def new
     @solicitacao = Solicitacao.new
     @produtos = Produto.order :nome
+    @setores = Setor.all
   end
 
   # GET /solicitacoes/1/edit
