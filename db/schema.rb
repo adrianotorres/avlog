@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810205139) do
+ActiveRecord::Schema.define(version: 20160812155311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "aquisicoes", force: :cascade do |t|
+    t.integer  "produto_id"
+    t.integer  "setor_id"
+    t.integer  "usuario_id"
+    t.integer  "quantidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["produto_id"], name: "index_aquisicoes_on_produto_id", using: :btree
+    t.index ["setor_id"], name: "index_aquisicoes_on_setor_id", using: :btree
+    t.index ["usuario_id"], name: "index_aquisicoes_on_usuario_id", using: :btree
+  end
 
   create_table "estoques", force: :cascade do |t|
     t.integer  "produto_id"
@@ -73,6 +85,9 @@ ActiveRecord::Schema.define(version: 20160810205139) do
     t.index ["setor_id"], name: "index_usuarios_on_setor_id", using: :btree
   end
 
+  add_foreign_key "aquisicoes", "produtos"
+  add_foreign_key "aquisicoes", "setores"
+  add_foreign_key "aquisicoes", "usuarios"
   add_foreign_key "estoques", "produtos"
   add_foreign_key "estoques", "setores"
   add_foreign_key "solicitacoes", "produtos"

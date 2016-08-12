@@ -8,6 +8,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.singular /^(ox)en/i, '\1'
    inflect.irregular 'setor', 'setores'
    inflect.irregular 'solicitacao', 'solicitacoes'
+   inflect.irregular 'aquisicao', 'aquisicoes'
 #   inflect.uncountable %w( fish sheep )
 end
 

@@ -1,0 +1,10 @@
+<%= bootstrap_form_for(aquisicao, inline_errors: false) do |f| %>
+  <% produtos = @produtos.map { |p| [ p.nome, p.id ] } %>
+  <% produtos.unshift [ 'Selecione o produto', 0 ] %>
+  <%= f.select :produto_id, produtos, { label: "Produto" }, { class: "selectpicker" } %>
+  <%= f.number_field :quantidade, min: 1 %>
+  <%= button_tag( :class => "btn btn-info") do %>
+    <i class="fa fa-download"></i> Salvar
+  <% end %>
+  <%= link_to aquisicoes_path, class: "btn btn-primary" do %> <i class="fa fa-reply"></i> Voltar <%end%>
+<% end %>

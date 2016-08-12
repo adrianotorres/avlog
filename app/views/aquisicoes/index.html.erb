@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aquisicoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Setor</th>
+      <th>Usuario</th>
+      <th>Quantidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aquisicoes.each do |aquisicao| %>
+      <tr>
+        <td><%= aquisicao.produto %></td>
+        <td><%= aquisicao.setor %></td>
+        <td><%= aquisicao.usuario %></td>
+        <td><%= aquisicao.quantidade %></td>
+        <td><%= link_to 'Show', aquisicao %></td>
+        <td><%= link_to 'Edit', edit_aquisicao_path(aquisicao) %></td>
+        <td><%= link_to 'Destroy', aquisicao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aquisicao', new_aquisicao_path %>

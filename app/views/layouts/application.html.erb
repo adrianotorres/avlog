@@ -52,7 +52,7 @@
             </li>
 
              <% if usuario_do_setor_principal %>
-              <li><%= link_to 'Aquisição', new_estoque_path %></li>
+              <li><%= link_to 'Aquisição', new_aquisicao_path %></li>
              <% end %>
              <li><%= link_to 'Solicitação', new_solicitacao_path %></li>
              <li><a href="#">Relatórios</a></li>
@@ -80,7 +80,9 @@
 
     <div class="row">
       <div class="col-md-2"></div>
-      <div class="col-md-8"><%= yield %></div>
+      <div class="col-md-8" style="margin-top: 1em">
+        <%= yield %>
+      </div>
       <div class="col-md-2"></div>
     </div><br><br>
 

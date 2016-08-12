@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @aquisicao.produto %>
+</p>
+
+<p>
+  <strong>Setor:</strong>
+  <%= @aquisicao.setor %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @aquisicao.usuario %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @aquisicao.quantidade %>
+</p>
+
+<%= link_to 'Edit', edit_aquisicao_path(@aquisicao) %> |
+<%= link_to 'Back', aquisicoes_path %>

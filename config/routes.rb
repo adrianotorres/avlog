@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :aquisicoes
   # root "setores#index"
 
   resources :estoques

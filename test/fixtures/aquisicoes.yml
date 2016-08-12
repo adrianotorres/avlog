@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  produto: one
+  setor: one
+  usuario: one
+  quantidade: 1
+
+two:
+  produto: two
+  setor: two
+  usuario: two
+  quantidade: 1
