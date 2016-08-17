@@ -1,16 +1,61 @@
+
+<div class = "page-header">
+   <h4><i class="fa fa-bullhorn fa-2x" aria-hidden="true">Solicitação de Produto</i></h4>
+</div>
+
 <div class="container-fluid bg-3 text-center">
-  <h3>Soliciação de Produtos</h3><br>
+
+
+  <!-- <% for produto in @produtos do %>
+    <fieldset class="well col-md-4">
+        <legend class=""><%= produto.nome %></legend>
+        <div class="row">
+          <%= image_tag produto.imagem %>
+        <div>
+
+        <button type="button" class=" btn-xs btn btn-info " data-toggle="collapse" data-target="#estoques_<%=produto.id%>">solicitar</button>
+        <div id="estoques_<%=produto.id%>" class="collapse">
+          <%=produto.nome%>
+        </div>
+    </fieldset>
+  <% end %> -->
 
   <div class="row">
     <table class="table">
+      <% width = 70 / @setores.length%>
       <thead>
-        <th>Produto</th>
-        <% for setor in @setores%>
-          <th><%= setor.sigla%></th>
+        <th width="30%"></th>
+        <% for setor in @setores do %>
+          <th width="<%=width%>%" class="text-center"><%= setor.sigla%></th>
         <% end %>
       </thead>
       <tbody>
-
+        <% for produto in @produtos do %>
+          <tr>
+            <%tds=2%>
+            <td width="30%" heigth="1em">
+              <div class="row">
+                <%= produto.nome %>
+              </div>
+              <%= image_tag produto.imagem %>
+            </td>
+            <% for setor in @setores do%>
+              <% for estoque in produto.estoques do%>
+                <% if estoque.setor.id == setor.id %>
+                  <td width="<%=width%>%" style="padding-top: 3em">
+                    <button type="button" class="btn btn-<%=class_estoque(estoque.quantidade)%> outline"><%= estoque.quantidade%></button>
+                  </td>
+                  <%tds=tds-1%>
+                <% end %>
+              <% end %>
+            <% end %>
+            <% for i in 1..tds do%>
+              <td width="<%=width%>%" style="padding-top: 3em">
+                <button type="button" class="btn btn-danger outline disabled">0</button>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
